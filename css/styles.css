@@ -471,7 +471,12 @@ header .general_nav .inner_right .contact_link:active {
 }
 .mobile_menu .container {
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+.mobile_menu .container::-webkit-scrollbar {
+  width: 4px;
 }
 .mobile_menu .mobile_menu_inner {
   width: 100%;

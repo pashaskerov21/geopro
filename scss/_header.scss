@@ -26,6 +26,7 @@ header {
     .top_nav {
         display: none;
         background-color: $bg-color-1;
+
         @media (min-width: 1200px) {
             display: block;
         }
@@ -33,10 +34,12 @@ header {
         .contact_link {
             @include row-center;
             gap: 5px;
-            i{
+
+            i {
                 font-size: 14px;
                 color: $primary-color;
             }
+
             span {
                 font-family: Jost;
                 font-weight: 500;
@@ -293,13 +296,20 @@ header {
     display: none;
     z-index: 9999;
 
+
     @media (min-width: 1200px) {
         display: none !important;
     }
 
     .container {
         background-color: #fff;
-        box-shadow: 0 0 10px $black-1;
+        box-shadow: 0 0 10px $black-2;
+        max-height: calc(100vh - 150px);
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
     }
 
     .mobile_menu_inner {
