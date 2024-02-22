@@ -1,0 +1,33 @@
+@keyframes menuLineAnimate {
+    50% {transform: translateY(0px) rotate(0deg);}
+    100% {transform: translateY(0px) rotate(-45deg);}
+    }
+    
+    @keyframes menuLineAnimateReverse {
+    0% {transform: translateY(0px) rotate(45deg);}
+    50% {transform: translateY(0px) rotate(0deg);}
+    100% {transform: translateY(-6px) rotate(0deg);}
+    }
+    
+    @keyframes menuLineAnimate2 {
+    50% {transform: translateY(0px) rotate(0deg);}
+    100% {transform: translateY(0px) rotate(45deg);}
+    }
+    
+    @keyframes menuLineAnimate2Reverse {
+    0% {transform: translateY(0px) rotate(-45deg);}
+    50% {transform: translateY(0px) rotate(0deg);}
+    100% {transform: translateY(4px) rotate(0deg);}
+    }
+    
+    @keyframes rotateMenuIcon {
+    100% {transform: rotate(90deg);}
+    }
+    @keyframes backdropAnimation{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
