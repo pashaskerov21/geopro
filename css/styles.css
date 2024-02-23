@@ -458,9 +458,10 @@ header .general_nav .inner_right .contact_link:active {
 
 .mobile_menu {
   position: fixed;
-  width: 100%;
+  width: 90%;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   display: none;
   z-index: 9999;
 }
@@ -472,7 +473,7 @@ header .general_nav .inner_right .contact_link:active {
 .mobile_menu .container {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  max-height: calc(100vh - 150px);
+  max-height: calc(100vh - 200px);
   overflow-y: auto;
 }
 .mobile_menu .container::-webkit-scrollbar {
