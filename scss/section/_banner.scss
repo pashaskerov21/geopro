@@ -1,0 +1,140 @@
+.banner_section {
+    position: relative;
+    padding: 0;
+    @media (min-width: 992px){
+        margin-bottom: 150px;
+    }
+    .banner_slider {
+        width: 100%;
+        min-height: 50vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        @include column-center;
+        .gradient_overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(90deg, $primary-color 18%, #980F5A05 100%);
+            opacity: .58;
+            z-index: 0;
+        }
+        .container{
+            z-index: 10;
+        }
+        .banner_slider_content{
+            padding: 60px 0;
+            max-width: 900px;
+            @include column-align-start;
+            gap: 30px;
+            color: #fff;
+            .content_title{
+                font-family: $primary-font;
+                font-size: 30px;
+                font-weight: 700;
+                font-style: normal;
+                color: #fff;
+                opacity: 0;
+                transition: all 1s;
+                transform: translateY(-40px);
+            }
+            .design_line{
+                width: 0;
+                height: 2px;
+                background-color: $secondary-color;
+                transition: all 1s;
+            }
+            .content_text{
+                font-family: $secondary-font;
+                font-size: 22px;
+                font-weight: 500;
+                line-height: 1.5em;
+                opacity: 0;
+                transition: all 1s;
+                transform: translateY(40px);
+            }
+            @media (min-width: 768px){
+                padding: 130px 0;
+                .content_title{
+                    font-size: 60px;
+                }
+            }
+            @media (min-width: 1400px){
+                padding: 180px 0;
+                .content_title{
+                    font-size: 80px;
+                }
+                .content_text{
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    .swiper-slide-active{
+        .banner_slider{
+            .banner_slider_content{
+                .content_title{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+                .design_line{
+                    width: 120px;
+                }
+                .content_text{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+    .banner_contact_wrapper{
+        width: 100%;
+        @include column-center;
+        @media (min-width: 992px){
+            @include row-between;
+            max-width: 1100px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translateY(50%);
+        }
+        .contact_item{
+            width: 100%;
+            @include row-start;
+            padding: 30px;
+            background-color: $primary-color;
+            color: #fff;
+            gap: 30px 20px;
+            border-bottom: 1px solid $secondary-color;
+            cursor: normal;
+            @media (min-width: 992px){
+                border-bottom: none;
+                border-right: 1px solid $secondary-color;
+            }
+            &:hover{
+                background-color: $secondary-color;
+            }
+            .item_icon{
+                font-size: 35px;
+            }
+            .item_content{
+                @include column-align-start;
+                gap: 15px;
+                max-width: 250px;
+                .item_value{
+                    font-size: 18px;
+                    font-weight: 600;
+                    font-family: $secondary-font;
+                    font-style: normal;
+                }
+                .item_text{
+                    font-size: 16px;
+                    font-family: $secondary-font;
+                    font-style: normal;
+                }
+            }
+        }
+    }
+}
