@@ -125,3 +125,42 @@ section {
     opacity: 0;
     animation: backdropAnimation 0.3s ease forwards;
 }
+
+.section_heading{
+    width: 100%;
+    padding: 20px 0;
+    .section_heading_title{
+        width: 100%;
+        max-width: 600px;
+        color: $text-color-1;
+        font-size: 30px;
+        line-height: 1.2em;
+        font-family: $primary-font;
+        font-style: normal;
+        font-weight: 700;
+        @media (min-width: 768px){
+            font-size: 40px;
+        }
+    }
+    .section_heading_text{
+        width: 100%;
+        max-width: 600px;
+        color: $text-color-1;
+        font-family: $secondary-font;
+        font-size: 22px;
+        font-weight: 600;
+    }
+    &.content_center{
+        @include column-center;
+        gap: 20px;
+        text-align: center;
+    }
+    &.color_white{
+        .section_heading_title{
+            color: #ffffff !important;
+        }
+        .section_heading_text{
+            color: #ffffff !important;
+        }
+    }
+}

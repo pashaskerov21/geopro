@@ -1,0 +1,128 @@
+.services_section {
+    .cards_container{
+        z-index: 20;
+    }
+    .services_wrapper {
+        padding: 30px 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        place-items: center;
+        
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (min-width: 1200px) {
+            grid-template-columns: repeat(4, 1fr);
+            
+        }
+
+        .service_card {
+            width: 100%;
+            @include column-align-start;
+            gap: 30px;
+            padding: 35px;
+            border: 1px solid $black-1;
+            background-color: #fff;
+
+            .card_icon {
+                width: 60px;
+                height: 60px;
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                    object-fit: contain;
+                }
+            }
+
+            .card_title {
+                text-transform: uppercase;
+                color: $text-color-2;
+                font-size: 15px;
+                font-family: $secondary-font;
+                font-weight: 700;
+                letter-spacing: 1px;
+                transition: all 0.3s;
+            }
+
+            .design_line {
+                width: 120px;
+                height: 2px;
+                background-color: $primary-color;
+            }
+
+            .card_text {
+                color: $text-color-2;
+                font-size: 15px;
+                font-family: $secondary-font;
+                line-height: 1.9em;
+            }
+
+            .arrow_btn {
+                font-size: 20px;
+                color: $primary-color;
+                &:hover{
+                    transform: translateX(10px);
+                }
+            }
+            &:hover{
+                .card_title{
+                    color: $primary-color;
+                }
+                .design_line{
+                    animation: lineAnimation 0.5s ease forwards;
+                }
+            }
+        }
+    }
+    .services_content{
+        
+        width: 100%;
+        padding: 80px 0;
+        background-size: cover;
+        position: relative;
+        @include column-center;
+        @media (min-width: 1200px){
+            padding: 300px 0 100px;
+            z-index: -1;
+            // transform: translateY(-250px);
+            margin-top: -250px;
+        }
+        .bg_layer{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $black-6;
+            z-index: 0;
+        }
+        .container{
+            z-index: 10;
+        }
+        .section_heading{
+            @include column-align-start;
+            gap: 30px;
+            .design_line{
+                width: 120px;
+                height: 2px;
+                background-color: $secondary-color;
+            }
+            @media (min-width: 768px){
+                align-items: center;
+                text-align: center;
+            }
+        }
+    }
+}
+@keyframes lineAnimation{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 120px;
+    }
+}

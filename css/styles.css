@@ -134,6 +134,48 @@ section {
   animation: backdropAnimation 0.3s ease forwards;
 }
 
+.section_heading {
+  width: 100%;
+  padding: 20px 0;
+}
+.section_heading .section_heading_title {
+  width: 100%;
+  max-width: 600px;
+  color: #301428;
+  font-size: 30px;
+  line-height: 1.2em;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .section_heading .section_heading_title {
+    font-size: 40px;
+  }
+}
+.section_heading .section_heading_text {
+  width: 100%;
+  max-width: 600px;
+  color: #301428;
+  font-family: "Jost", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+.section_heading.content_center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.section_heading.color_white .section_heading_title {
+  color: #ffffff !important;
+}
+.section_heading.color_white .section_heading_text {
+  color: #ffffff !important;
+}
+
 @keyframes menuLineAnimate {
   50% {
     transform: translateY(0px) rotate(0deg);
@@ -1024,4 +1066,136 @@ footer .footer_bottom .inner .social_media a:hover {
   font-size: 16px;
   font-family: "Jost", sans-serif;
   font-style: normal;
+}
+
+.services_section .cards_container {
+  z-index: 20;
+}
+.services_section .services_wrapper {
+  padding: 30px 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  place-items: center;
+}
+@media (min-width: 768px) {
+  .services_section .services_wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .services_section .services_wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.services_section .services_wrapper .service_card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 35px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+.services_section .services_wrapper .service_card .card_icon {
+  width: 60px;
+  height: 60px;
+}
+.services_section .services_wrapper .service_card .card_icon img {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.services_section .services_wrapper .service_card .card_title {
+  text-transform: uppercase;
+  color: #4c4c4c;
+  font-size: 15px;
+  font-family: "Jost", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+.services_section .services_wrapper .service_card .design_line {
+  width: 120px;
+  height: 2px;
+  background-color: #013298;
+}
+.services_section .services_wrapper .service_card .card_text {
+  color: #4c4c4c;
+  font-size: 15px;
+  font-family: "Jost", sans-serif;
+  line-height: 1.9em;
+}
+.services_section .services_wrapper .service_card .arrow_btn {
+  font-size: 20px;
+  color: #013298;
+}
+.services_section .services_wrapper .service_card .arrow_btn:hover {
+  transform: translateX(10px);
+}
+.services_section .services_wrapper .service_card:hover .card_title {
+  color: #013298;
+}
+.services_section .services_wrapper .service_card:hover .design_line {
+  animation: lineAnimation 0.5s ease forwards;
+}
+.services_section .services_content {
+  width: 100%;
+  padding: 80px 0;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1200px) {
+  .services_section .services_content {
+    padding: 300px 0 100px;
+    z-index: -1;
+    margin-top: -250px;
+  }
+}
+.services_section .services_content .bg_layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+.services_section .services_content .container {
+  z-index: 10;
+}
+.services_section .services_content .section_heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+}
+.services_section .services_content .section_heading .design_line {
+  width: 120px;
+  height: 2px;
+  background-color: #00CDF9;
+}
+@media (min-width: 768px) {
+  .services_section .services_content .section_heading {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@keyframes lineAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 120px;
+  }
 }/*# sourceMappingURL=styles.css.map */
