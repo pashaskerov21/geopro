@@ -61,34 +61,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         // counter
-        var isCounting = false;
-        $(window).on('scroll', function () {
-            if (!isCounting && isScrolledIntoView($(".about_report"))) {
-                isCounting = true;
-                $('.item_value').each(function () {
-                    var $this = $(this);
-                    var countTo = $this.attr('data-val');
-                    $({ countNum: $this.text() }).animate({ countNum: countTo }, {
-                        duration: 4000,
-                        easing: 'swing',
-                        step: function () {
-                            $this.text(Math.floor(this.countNum));
-                        },
+        if ($(".about_report").length) {
+            var isCounting = false;
+            $(window).on('scroll', function () {
+                if (!isCounting && isScrolledIntoView($(".about_report"))) {
+                    isCounting = true;
+                    $('.item_value').each(function () {
+                        var $this = $(this);
+                        var countTo = $this.attr('data-val');
+                        $({ countNum: $this.text() }).animate({ countNum: countTo }, {
+                            duration: 4000,
+                            easing: 'swing',
+                            step: function () {
+                                $this.text(Math.floor(this.countNum));
+                            },
 
-                        complete: function () {
-                            $this.text(this.countNum);
-                        }
+                            complete: function () {
+                                $this.text(this.countNum);
+                            }
+                        });
                     });
-                });
+                }
+            });
+            function isScrolledIntoView(elem) {
+                var docViewTop = $(window).scrollTop();
+                var docViewBottom = docViewTop + $(window).height();
+                var elemTop = $(elem).offset().top;
+                return (elemTop <= docViewBottom);
             }
-        });
-
-        function isScrolledIntoView(elem) {
-            var docViewTop = $(window).scrollTop();
-            var docViewBottom = docViewTop + $(window).height();
-            var elemTop = $(elem).offset().top;
-            return (elemTop <= docViewBottom);
         }
+
+        
 
         const newsBanners = $('.news_banners .banner_item');
         const newsListItems = $('.news_list .list_item');
@@ -105,6 +108,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if ($(window).width() > 992) {
                 newsContainerSecondCol.css('height', newsContainerFirstCol.outerHeight() + 'px');
             }
-        }, function () {});
+        }, function () { });
     })
 })
