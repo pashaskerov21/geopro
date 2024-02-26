@@ -1510,7 +1510,7 @@ footer .footer_bottom .inner .social_media a:hover {
   width: 4px;
 }
 .news_section .news_wrapper .news_container .container_col.col_2 {
-  height: 400px;
+  height: 600px;
 }
 @media (min-width: 992px) {
   .news_section .news_wrapper .news_container .container_col {
