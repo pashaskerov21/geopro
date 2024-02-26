@@ -89,5 +89,21 @@ document.addEventListener('DOMContentLoaded', function () {
             var elemTop = $(elem).offset().top;
             return (elemTop <= docViewBottom);
         }
+
+        const newsBanners = $('.news_banners .banner_item');
+        const newsListItems = $('.news_list .list_item');
+        const newsContainerFirstCol = $('.news_container .container_col.col_1');
+        const newsContainerSecondCol = $('.news_container .container_col.col_2');
+        newsContainerSecondCol.css('height', newsContainerFirstCol.outerHeight() + 'px');
+        newsBanners.eq(0).removeClass('d-none');
+        newsListItems.hover(function(){
+            let id = $(this).data('id');
+            newsBanners.addClass('d-none');
+            $(`.news_banners .banner_item[data-id="${id}"]`).removeClass('d-none');
+            newsContainerSecondCol.css('height', newsContainerFirstCol.outerHeight() + 'px');
+        },function(){
+            // newsBanners.addClass('d-none');
+            // newsBanners.eq(0).removeClass('d-none');
+        })
     })
 })

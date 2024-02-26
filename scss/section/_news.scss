@@ -1,0 +1,299 @@
+.news_section {
+    padding: 0;
+    min-height: 100vh;
+    background-color: $bg-color-3;
+
+    @media (min-width: 1200px) {
+        background-image: var(--image);
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: 30% auto;
+    }
+
+    .partners_wrapper {
+        padding: 60px;
+        width: 100%;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $black-6;
+        }
+
+        .partner_swiper {
+            z-index: 10;
+        }
+
+        .partner_logo {
+            width: 100%;
+            @include row-center;
+            max-width: 220px;
+            height: 150px;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                max-height: 150px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    .news_wrapper {
+        padding: 80px 0;
+        width: 100%;
+        @include column-start;
+        gap: 40px;
+
+        .section_heading {
+            @include column-start;
+            gap: 15px;
+
+            .design_line {
+                width: 120px;
+                height: 2px;
+                background-color: $primary-color;
+            }
+        }
+
+        .news_container {
+            width: 100%;
+            @include column-start;
+            gap: 30px;
+
+            @media (min-width: 992px) {
+                @include row-justify-start;
+                align-items: stretch;
+                gap: 40px;
+            }
+
+            .container_col {
+                @include column-start;
+                gap: 40px;
+
+                &::-webkit-scrollbar {
+                    width: 4px;
+                }
+
+                &.col_2 {
+                    height: 400px;
+                }
+
+                @media (min-width: 992px) {
+                    min-height: 700px;
+                    // @include column-between;
+                    overflow: auto;
+                }
+            }
+
+            .all_news_button {
+                width: 100%;
+                @include row-center;
+                padding: 30px;
+                text-align: center;
+                color: #fff;
+                background-color: $primary-color;
+                font-size: 20px;
+                font-family: $secondary-font;
+                font-weight: 600;
+
+                &:active {
+                    background-color: $secondary-color;
+                }
+            }
+
+            .news_banners {
+                width: 100%;
+                max-width: 450px;
+
+                .banner_item {
+                    width: 100%;
+                    min-height: 400px;
+                    position: relative;
+
+                    @media (min-width: 768px) {
+                        min-height: 550px;
+                    }
+
+                    .news_image {
+                        width: 100%;
+                        min-height: 400px;
+                        height: auto;
+                        object-fit: cover;
+
+                        @media (min-width: 768px) {
+                            min-height: 550px;
+                        }
+                    }
+
+                    .item_content {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        @include column-between;
+                        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .55) 56%, rgba(0, 0, 0, .55) 100%);
+
+                        .item_badge {
+                            align-self: flex-end;
+                            background-color: #f7db60;
+                            color: #000;
+                            font-size: 12px;
+                            font-family: $secondary-font;
+                            text-transform: uppercase;
+                            letter-spacing: 1px;
+                            padding: 25px;
+                            @include row-center;
+                            text-align: center;
+                            font-weight: 600;
+                            opacity: 0;
+                            transform: rotateX(90deg);
+                            animation: bannerBadgeAnimation 1s ease forwards;
+                        }
+
+                        .item_bottom {
+                            width: 100%;
+                            padding: 15px;
+                            @include column-start;
+                            gap: 15px;
+
+                            @media (min-width: 768px) {
+                                padding: 30px;
+                            }
+
+                            .item_date_author {
+                                @include row-justify-start;
+                                gap: 5px;
+                                color: #fff;
+                                opacity: 0;
+                                transform: translateY(20px);
+                                animation: bannerContentAnimation 1s ease forwards;
+                            }
+
+                            .item_title {
+                                opacity: 0;
+                                transform: translateY(20px);
+                                animation: bannerContentAnimation 1s ease forwards;
+
+                                a {
+                                    color: #fff;
+                                    display: inline;
+                                    position: relative;
+                                    background: linear-gradient(to right, #fff 0%, #fff 100%);
+                                    background-size: 0 2px;
+                                    background-position: 0 99%;
+                                    padding: .1% 0;
+                                    background-repeat: no-repeat;
+                                    transition: all 0.3s;
+                                }
+
+                                &:hover {
+                                    a {
+                                        background-size: 100% 2px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .news_list {
+                width: 100%;
+                max-width: 450px;
+                padding: 20px;
+                background-color: #fff;
+                border: 1px solid $black-1;
+                @include column-start;
+                gap: 20px;
+                overflow-y: auto;
+
+                &::-webkit-scrollbar {
+                    width: 4px;
+                }
+
+                @media (min-width: 992px) {
+                    height: 100%;
+                    max-height: 100%;
+
+                }
+
+                @media (min-width: 1200px) {
+                    max-width: 340px;
+                }
+
+                .list_item {
+                    width: 100%;
+                    @include column-start;
+                    gap: 10px;
+
+                    .item_title {
+                        a {
+                            color: $text-color-1;
+                            display: inline;
+                            position: relative;
+                            background: linear-gradient(to right, $text-color-1 0%, $text-color-1 100%);
+                            background-size: 0 2px;
+                            background-position: 0 99%;
+                            padding: .1% 0;
+                            background-repeat: no-repeat;
+                            transition: all 0.3s;
+                            font-weight: 600;
+                            font-family: $primary-font;
+                        }
+
+
+                        &:hover {
+                            a{
+                                background-size: 100% 2px;
+                            }
+                        }
+                    }
+
+                    .item_text {
+                        color: $text-color-2;
+                        opacity: 0.7;
+                    }
+
+                    .item__bottom {
+                        width: 100%;
+                        @include row-justify-start;
+                        gap: 5px;
+                        font-size: 12px;
+                        color: $text-color-2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes bannerContentAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bannerBadgeAnimation {
+    0% {
+        opacity: 0;
+        transform: rotateX(90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}

@@ -102,7 +102,10 @@
         }
         .contact_item{
             width: 100%;
-            @include row-start;
+            @include column-center;
+            @media (min-width: 576px){
+                @include row-start;
+            }
             padding: 30px;
             background-color: $primary-color;
             color: #fff;
@@ -120,9 +123,14 @@
                 font-size: 35px;
             }
             .item_content{
-                @include column-align-start;
+                @include column-center;
+                text-align: center;
                 gap: 15px;
                 max-width: 250px;
+                @media (min-width: 576px){
+                    text-align: start;
+                    @include column-align-start;
+                }
                 .item_value{
                     font-size: 18px;
                     font-weight: 600;
