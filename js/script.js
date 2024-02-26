@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const footerNavLinks = $('.footer_nav_links a');
         const footerNavLinksHoverLine = $('.footer_nav_links .hover_line');
 
-        
+
 
         // main.css('margin-bottom', footer.outerHeight() + 'px');
         // body.css('height', body.outerHeight() + footer.outerHeight() + 'px')
@@ -49,13 +49,44 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        footerNavLinks.hover(function(){
+        footerNavLinks.hover(function () {
             const left = $(this).position().left;
             const width = $(this).outerWidth();
             footerNavLinksHoverLine.css('left', left + 'px');
             footerNavLinksHoverLine.css('width', width + 'px');
-        },function(){
+        }, function () {
             footerNavLinksHoverLine.css('width', 0);
         });
+
+
+
+        // counter
+        var isCounting = false;
+        $(window).on('scroll', function () {
+            if (!isCounting && isScrolledIntoView($(".about_report"))) {
+                isCounting = true;
+                $('.item_value').each(function () {
+                    var $this = $(this);
+                    var countTo = $this.attr('data-val');
+                    $({ countNum: $this.text() }).animate({ countNum: countTo }, {
+                        duration: 4000,
+                        easing: 'swing',
+                        step: function () {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function () {
+                            $this.text(this.countNum);
+                        }
+                    });
+                });
+            }
+        });
+
+        function isScrolledIntoView(elem) {
+            var docViewTop = $(window).scrollTop();
+            var docViewBottom = docViewTop + $(window).height();
+            var elemTop = $(elem).offset().top;
+            return (elemTop <= docViewBottom);
+        }
     })
 })
