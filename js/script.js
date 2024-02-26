@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         step: function () {
                             $this.text(Math.floor(this.countNum));
                         },
-                        
+
                         complete: function () {
                             $this.text(this.countNum);
                         }
@@ -94,16 +94,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const newsListItems = $('.news_list .list_item');
         const newsContainerFirstCol = $('.news_container .container_col.col_1');
         const newsContainerSecondCol = $('.news_container .container_col.col_2');
-        newsContainerSecondCol.css('height', newsContainerFirstCol.outerHeight() + 'px');
+        if ($(window).width() > 992) {
+            newsContainerSecondCol.css('height', newsContainerFirstCol.outerHeight() + 'px');
+        }
         newsBanners.eq(0).removeClass('d-none');
-        newsListItems.hover(function(){
+        newsListItems.hover(function () {
             let id = $(this).data('id');
             newsBanners.addClass('d-none');
             $(`.news_banners .banner_item[data-id="${id}"]`).removeClass('d-none');
-            newsContainerSecondCol.css('height', newsContainerFirstCol.outerHeight() + 'px');
-        },function(){
-            // newsBanners.addClass('d-none');
-            // newsBanners.eq(0).removeClass('d-none');
-        })
+            if ($(window).width() > 992) {
+                newsContainerSecondCol.css('height', newsContainerFirstCol.outerHeight() + 'px');
+            }
+        }, function () { });
     })
 })
