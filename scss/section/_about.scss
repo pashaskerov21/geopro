@@ -1,5 +1,7 @@
 .about_section {
     background-color: $bg-color-2;
+    padding: 60px 0;
+
     .about_wrapper {
         width: 100%;
         @include column-center;
@@ -20,13 +22,32 @@
             gap: 30px;
             background-color: #fff;
             position: relative;
-            
+
+            .content_inner {
+                width: 100%;
+                @include column-align-start;
+                gap: 30px;
+
+                @media (min-width: 992px) {
+                    width: 50%;
+
+                }
+            }
+
             @media (min-width: 992px) {
                 justify-content: flex-start;
                 padding-bottom: 100px;
                 box-shadow: 0 0 10px $black-1;
-                padding: 60px 80px;
-                padding-bottom: 250px;
+
+                background-image: var(--image);
+                background-position: center right;
+                background-repeat: no-repeat;
+                background-size: 50% auto;
+
+                .content_inner {
+                    padding: 60px 80px;
+                    margin-bottom: 50px;
+                }
             }
 
             .section_heading {
@@ -61,31 +82,28 @@
             }
         }
 
-        .about_image{
+        .about_image {
             width: 100%;
-            img{
+
+            img {
                 width: 100%;
                 height: auto;
                 object-fit: contain;
             }
         }
     }
+
     .about_report {
         width: 100%;
+        max-width: 1000px;
         @include column-center;
         z-index: 20;
         position: relative;
+
         @media (min-width: 768px) {
             @include row-between;
             align-items: stretch;
-            
-        }
 
-        @media (min-width: 992px) {
-            max-width: 1000px;            
-            position: absolute;
-            bottom: 0;
-            left: 0;
         }
 
         .report_item {
@@ -97,15 +115,24 @@
             color: #fff;
             font-family: $secondary-font;
             text-align: center;
-            @media (min-width: 992px){
+
+            @media (min-width: 992px) {
                 padding: 40px 30px;
             }
-            &:last-child{
+
+            &:last-child {
                 background-color: $secondary-color;
             }
+
             .item_value {
                 font-size: 40px;
                 font-weight: 700;
+                @media (min-width: 768px){
+                    font-size: 30px;
+                }
+                @media (min-width: 992px){
+                    font-size: 40px;
+                }
             }
 
             .item_label {

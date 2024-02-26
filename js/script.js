@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         step: function () {
                             $this.text(Math.floor(this.countNum));
                         },
+                        
                         complete: function () {
                             $this.text(this.countNum);
                         }
