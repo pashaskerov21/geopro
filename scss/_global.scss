@@ -164,3 +164,35 @@ section {
         }
     }
 }
+
+.page_heading{
+    width: 100%;
+    padding: 60px 0;
+    background-color: $bg-color-3;
+    .heading_inner{
+        @include column-align-start;
+        gap: 20px;
+        .breadcrumbs{
+            @include row-justify-start;
+            gap: 10px;
+            a{
+                font-size: 12px;
+                font-family: $secondary-font;
+                color: $text-color-1;
+                font-weight: 500;
+                text-transform: uppercase;
+                &:hover{
+                    color: $primary-color;
+                }
+            }
+            i{
+                font-size: 10px;
+                color: $primary-color;
+            }
+        }
+        .page_title{
+            font-weight: 700;
+            color: $text-color-1;
+        }
+    }
+}

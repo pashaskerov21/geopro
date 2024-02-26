@@ -105,6 +105,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if ($(window).width() > 992) {
                 newsContainerSecondCol.css('height', newsContainerFirstCol.outerHeight() + 'px');
             }
-        }, function () { });
+        }, function () {});
     })
 })

@@ -176,6 +176,44 @@ section {
   color: #ffffff !important;
 }
 
+.page_heading {
+  width: 100%;
+  padding: 60px 0;
+  background-color: #fafafa;
+}
+.page_heading .heading_inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+.page_heading .heading_inner .breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.page_heading .heading_inner .breadcrumbs a {
+  font-size: 12px;
+  font-family: "Jost", sans-serif;
+  color: #301428;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.page_heading .heading_inner .breadcrumbs a:hover {
+  color: #013298;
+}
+.page_heading .heading_inner .breadcrumbs i {
+  font-size: 10px;
+  color: #013298;
+}
+.page_heading .heading_inner .page_title {
+  font-weight: 700;
+  color: #301428;
+}
+
 @keyframes menuLineAnimate {
   50% {
     transform: translateY(0px) rotate(0deg);
